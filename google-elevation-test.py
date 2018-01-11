@@ -1,6 +1,6 @@
 import googlemaps
 import sys
-import api-key
+from apikey import api_key
 
 def getLatLongFromAddress(address):
 
