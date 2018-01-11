@@ -1,5 +1,6 @@
 import googlemaps
 import sys
+import api-key
 
 def getLatLongFromAddress(address):
 
@@ -16,7 +17,7 @@ def getElevationFromLatLong(lat, lng):
 	return elev
 
 
-gmaps = googlemaps.Client(key='AIzaSyAPiKPjpIqk0kQLvK0IIPyFstWvvA3Mtrw')
+gmaps = googlemaps.Client(key=api_key)
 
 if len(sys.argv) == 1:
 	address = 'Ben Nevis, Scotland'
