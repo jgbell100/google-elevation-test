@@ -34,7 +34,7 @@ else:
 if dest_address == None:
 	lat, lng = getLatLongFromAddress(address)
 	elev = getElevationFromLatLong(lat, lng)
-	print ("The elevation of %s is %s metres") % (address, round(elev, 2))
+	print ("The elevation of %s is %s metres.") % (address, round(elev, 2))
 else:
 	lat, lng = getLatLongFromAddress(address)
 	source_elev = getElevationFromLatLong(lat, lng)
@@ -43,7 +43,12 @@ else:
 
 	diff = abs(source_elev - dest_elev)
 
-	print("The difference in elevation between %s and %s is %s metres.") % (address, dest_address, round(diff, 2))
+	if source_elev < dest_elev:
+		prep = "lower"
+	else:
+		prep = "higher"
+
+	print("%s is %s metres %s than %s.") % (address, round(diff, 2), prep, dest_address)
 
 
 
