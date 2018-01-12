@@ -20,7 +20,8 @@ def getElevationFromLatLong(lat, lng):
 gmaps = googlemaps.Client(key=api_key)
 
 if len(sys.argv) == 1:
-	address = 'Ben Nevis, Scotland'
+	print ("Give one or two addresses to find the elevations for")
+	exit(0)
 elif len(sys.argv) == 2:
 	address = sys.argv[1]	
 	dest_address = None
@@ -29,7 +30,7 @@ elif len(sys.argv) == 3:
 	dest_address = sys.argv[2]
 else:
 	print ("Too many arguments - give only one or two addresses")
-	exit(0);
+	exit(0)
 
 if dest_address == None:
 	lat, lng = getLatLongFromAddress(address)
